@@ -1,0 +1,1 @@
+ALTER TABLE "restaurants" RENAME COLUMN "name" TO "restaurant_name";

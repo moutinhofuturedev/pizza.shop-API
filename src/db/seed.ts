@@ -57,7 +57,7 @@ Populate the database with data restaurants
 */
 await db.insert(restaurants).values([
   {
-    name: fakerPT_BR.company.name(),
+    restaurantName: fakerPT_BR.company.name(),
     description: fakerPT_BR.lorem.paragraph(),
     managerId: manager.id,
   },

@@ -5,6 +5,19 @@ import { restaurants, users } from '../db/schema'
 const app = new Elysia()
 const port = 3333
 
+// app.get('/restaurants', async () => {
+//   const restaurant = await db.select().from(restaurants)
+
+//   return Response.json(restaurant)
+// })
+
+// app.get('/users/filtered', async () => {
+//   const user = (await db.select().from(users)).filter(
+//     (user) => user.role === 'manager',
+//   )
+//   return Response.json(user)
+// })
+
 app.post(
   '/restaurants',
   async ({ body, set }) => {
@@ -23,7 +36,7 @@ app.post(
       })
 
     await db.insert(restaurants).values({
-      name: restaurantName,
+      restaurantName,
       managerId: manager.id,
       description,
     })

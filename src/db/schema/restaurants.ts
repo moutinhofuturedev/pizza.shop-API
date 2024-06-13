@@ -7,7 +7,7 @@ export const restaurants = pgTable('restaurants', {
   id: text('id')
     .$default(() => createId())
     .primaryKey(),
-  name: text('name').notNull(),
+  restaurantName: text('restaurant_name').notNull(),
   description: text('description'),
   managerId: text('manager_id').references(() => users.id, {
     onDelete: 'set null',
