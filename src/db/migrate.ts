@@ -36,7 +36,9 @@ console.log(chalk.greenBright('Database migrations completed successfully!'))
 /**
  * Encerre a conexão com o banco de dados.
  */
-await connection.end()
+connection.end()
+
+console.log(chalk.redBright('Connection closed!'))
 
 /**
  * Saia do processo.

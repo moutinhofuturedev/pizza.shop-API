@@ -1,7 +1,7 @@
 /* eslint-disable drizzle/enforce-delete-with-where */
 /* eslint-disable camelcase */
 import { fakerPT_BR } from '@faker-js/faker'
-import { users, restaurants } from './schema'
+import { users, restaurants, authLinks } from './schema'
 import { db } from './connection'
 import chalk from 'chalk'
 
@@ -16,8 +16,9 @@ Reset the database
 */
 await db.delete(users)
 await db.delete(restaurants)
+await db.delete(authLinks)
 
-console.log(chalk.yellowBright('✅Database reset successfully!'))
+console.log(chalk.whiteBright('✅Database reset successfully!'))
 
 /*
 Populate the database with data customers
@@ -31,7 +32,7 @@ await db.insert(users).values([
   },
 ])
 
-console.log(chalk.yellowBright('✅Create customers!'))
+console.log(chalk.whiteBright('✅Create customers!'))
 
 /*
 Populate the database with data manager
@@ -50,7 +51,7 @@ const [manager] = await db
     id: users.id,
   })
 
-console.log(chalk.yellowBright('✅Create manager!'))
+console.log(chalk.whiteBright('✅Create manager!'))
 
 /*
 Populate the database with data restaurants
@@ -63,7 +64,7 @@ await db.insert(restaurants).values([
   },
 ])
 
-console.log(chalk.yellowBright('✅Create restaurants!'))
+console.log(chalk.whiteBright('✅Create restaurants!'))
 
 console.log(chalk.greenBright('Database seeding completed successfully!'))
 
