@@ -18,7 +18,7 @@ await db.delete(users)
 await db.delete(restaurants)
 await db.delete(authLinks)
 
-console.log(chalk.whiteBright('✅Database reset successfully!'))
+console.log(chalk.greenBright('Database reset successfully!'))
 
 /*
 Populate the database with data customers
